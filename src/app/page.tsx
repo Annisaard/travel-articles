@@ -3,6 +3,7 @@
 import { HeroBackground } from "@/components/hero-background";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 
 export default function Page() {
@@ -11,7 +12,14 @@ export default function Page() {
       <HeroBackground>
         <div className="px-9 w-full min-h-screen flex flex-col">
           <header className="py-4 flex justify-between">
-            <div>
+            <div className="flex items-center gap-1.5">
+              <Image
+                src={"/Logo.svg"}
+                alt="logo"
+                width={35}
+                height={35}
+                className="object-contain"
+              />
               <h2 className="text-xl font-roboto font-bold text-green-400">Travelnesia</h2>
             </div>
             <div className="flex gap-5 items-center">

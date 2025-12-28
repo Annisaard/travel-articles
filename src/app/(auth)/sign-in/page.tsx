@@ -34,11 +34,11 @@ export default function Page() {
   });
   return (
     <form onSubmit={formik.handleSubmit}>
-      <h1>Welcome Back</h1>
-      <p>
+      <h1 className="text-3xl font-semibold text-green-500 pb-1">Welcome Back</h1>
+      <p className="text-gray-50 text-sm">
         Today is a new day. It's your day. You shape it. Sign in to start managing your projects.
       </p>
-      <div>
+      <div className="py-7 space-y-4">
         <Input
           placeholder="Example@email.com"
           label="Email"
@@ -58,15 +58,21 @@ export default function Page() {
           onChange={formik.handleChange}
           error={formik.touched.password ? formik.errors.password : undefined}
         />
-        <p>Forgot Password</p>
+        <div className="flex justify-end">
+          <p className="text-sm text-green-300">Forgot Password?</p>
+        </div>
+        <Button type="submit" className="w-full">
+          {isMutating && <Spinner />}Sign In
+        </Button>
       </div>
-      <Button type="submit"> {isMutating && <Spinner />}Sign In</Button>
-      <p>
-        Don't have an account?{" "}
-        <a href="/sign-up" className="">
-          Sign Up
-        </a>
-      </p>
+      <div className="justify-center flex">
+        <p className="text-green-500 text-sm">
+          Don't have an account?{" "}
+          <a href="/sign-up" className="text-green-300 font-medium">
+            Sign Up
+          </a>
+        </p>
+      </div>
     </form>
   );
 }

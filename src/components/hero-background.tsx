@@ -12,6 +12,7 @@ export function HeroBackground({
           imageStyle,
         )}
       />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-65% to-[#181818]/80 z-10" />
       <div className="z-10 w-full relative">{children}</div>
     </section>
   );

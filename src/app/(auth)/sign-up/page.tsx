@@ -38,9 +38,11 @@ export default function Page() {
   });
   return (
     <form onSubmit={formik.handleSubmit}>
-      <h1>Hi, Welcome to Travelnesia</h1>
-      <p>Start your new account</p>
-      <div>
+      <h1 className="text-3xl font-semibold text-green-500 pb-1">
+        Hi, Welcome to <span className="text-green-300 font-bold">Travelnesia</span>
+      </h1>
+      <p className="text-gray-50 text-xs">Start your new account</p>
+      <div className="py-7 space-y-4">
         <Input
           placeholder="Enter your name"
           label="Username"
@@ -70,17 +72,24 @@ export default function Page() {
           error={formik.touched.password ? formik.errors.password : undefined}
         />
         <div className="flex items-center space-x-2">
-          <Checkbox id="terms" />
-          <Label htmlFor="terms">I agree to the Terms and Conditions</Label>
+          <Checkbox id="terms" className=" border-gray-50" />
+          <Label htmlFor="terms" className="font-normal text-xs text-gray-50">
+            I agree to the Terms and Conditions
+          </Label>
         </div>
+        <Button type="submit" className="w-full">
+          {isMutating && <Spinner />}Sign Up
+        </Button>
       </div>
-      <Button type="submit"> {isMutating && <Spinner />}Sign Up</Button>
-      <p>
-        Already have an account?
-        <a href="/sign-in" className="">
-          Log In
-        </a>
-      </p>
+      <div className="justify-center flex">
+        <p className="text-green-500 text-sm"></p>{" "}
+        <p>
+          Already have an account?{" "}
+          <a href="/sign-in" className="text-green-300 font-medium">
+            Log In
+          </a>
+        </p>
+      </div>
     </form>
   );
 }

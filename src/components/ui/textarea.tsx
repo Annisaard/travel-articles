@@ -8,7 +8,7 @@ export interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextArea
 }
 function Textarea({ id, label, className, ...props }: TextAreaProps) {
   return (
-    <div className="flex md:flex-row gap-1.5">
+    <div className="flex flex-col gap-1.5">
       {label && <Label htmlFor={id}>{label}</Label>}
       <textarea
         id={id}

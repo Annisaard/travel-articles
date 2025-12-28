@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import ArticleForm from "../_components/article-form";
 
@@ -13,9 +15,7 @@ export default function Page() {
       <div className="pb-4 pt-2">
         <h1>Create User Management</h1>
       </div>
-      <form className="flex flex-col">
-        <ArticleForm initialValues={initialValues} type="add" />
-      </form>
+      <ArticleForm initialValues={initialValues} type="add" />
     </div>
   );
 }

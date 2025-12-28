@@ -3,19 +3,12 @@
 import React, { useState } from "react";
 import { SidebarTrigger } from "../ui/sidebar";
 import { Separator } from "@radix-ui/react-separator";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
+
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Bell, LogOut, Mail } from "lucide-react";
 import Cookie from "js-cookie";
 import { ACCESS_TOKEN_KEY, USER_ID_KEY } from "@/lib/constants";
 import { redirect } from "next/navigation";
-import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 
 export default function Header() {

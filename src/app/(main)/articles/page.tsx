@@ -53,7 +53,7 @@ export default function Page() {
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <h1 className="text-xl font-semibold">Article</h1>
-        <Button onClick={() => router.push("/dashboard/articles/add")}>+ Add Article</Button>
+        <Button onClick={() => router.push("/articles/add")}>+ Add Article</Button>
       </div>
       <div>
         <Input

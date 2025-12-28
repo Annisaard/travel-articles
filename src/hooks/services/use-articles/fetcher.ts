@@ -4,7 +4,7 @@ import useSWRMutation from "swr/mutation";
 import useSWR from "swr";
 import configs from "@/hooks/services/config";
 import { buildQuery } from "@/lib/utils";
-import { ArticlePayload, ArticleQueryParams, ArticleResponseType } from "./types";
+import { ArticlePayload, ArticleQueryParams, ArticleResponseType, ArticleType } from "./types";
 
 export const useFetchAllArticle = (params?: ArticleQueryParams) => {
   const query = buildQuery(params);
@@ -21,10 +21,14 @@ export const useFetchAllArticle = (params?: ArticleQueryParams) => {
 };
 
 export const useFetchArticleById = (id: string) => {
-  const { data, error, isLoading } = useSWR(`${configs.endpointArticle}/${id}`, fetcher, {
-    revalidateOnFocus: true,
-    revalidateOnReconnect: true,
-  });
+  const { data, error, isLoading } = useSWR<ArticleType>(
+    `${configs.endpointArticle}/${id}`,
+    fetcher,
+    {
+      revalidateOnFocus: true,
+      revalidateOnReconnect: true,
+    },
+  );
   return {
     data,
     error,
