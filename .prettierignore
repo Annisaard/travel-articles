@@ -1,0 +1,8 @@
+#pnpm
+pnpm-lock.yaml
+
+# minified files
+*.min.*
+
+# mdx
+*.mdx
